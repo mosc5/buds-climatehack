@@ -8,10 +8,12 @@ Date: 13.11.2021
 
 """
 
-import algorithms.algorithm as alg
+import algorithms
 import algorithms.simulation as simulation
 import json
 from datetime import datetime
+
+from algorithms.fixed_schedule import FixedSchedule
 
 
 def parse_customers(file_name):
@@ -26,7 +28,7 @@ def parse_customers(file_name):
         # now song is a dictionary
         for attribute, value in customer.items():
             if 'time' in attribute:
-                value = datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
+                customer[attribute] = datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
     return data
 
 
@@ -34,7 +36,7 @@ if __name__ == '__main__':
     customers = parse_customers("customers.json")
     with open("data/points.json") as p:
         points = json.load(p)
-    alg1 = alg.BaseAlgorithm()
+    alg1 = FixedSchedule("stop_a", [], points)
     alg_list = []
     sim = simulation.Simulation(alg_list)
     sim.run()
