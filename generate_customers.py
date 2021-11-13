@@ -35,8 +35,8 @@ def generate_customers(amount: int, random_seed: int, input_file, output_file):
             'destination': destination
         }
         customer_list.append(customer_dict)
-    with open('data/' + output_file, 'w') as json_file:
-        json.dump(customer_list, json_file)
+    with open('data/' + output_file, "w+", encoding="utf8") as json_file:
+        json.dump(customer_list, json_file, indent=2, ensure_ascii=False)
 
 
 if __name__ == '__main__':
