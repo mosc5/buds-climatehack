@@ -8,7 +8,8 @@ Date: 13.11.2021
 
 """
 
-from algorithms import simulation, algorithm
+import algorithms.algorithm as alg
+import algorithms.simulation as simulation
 import json
 from datetime import datetime
 
@@ -33,7 +34,7 @@ if __name__ == '__main__':
     customers = parse_customers("customers.json")
     with open("data/points.json") as p:
         points = json.load(p)
-    alg1 = algorithm.BaseAlgorithm()
+    alg1 = alg.BaseAlgorithm()
     alg_list = []
     sim = simulation.Simulation(alg_list)
     sim.run()

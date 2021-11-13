@@ -9,12 +9,12 @@ Date: 13.11.2021
 """
 
 from typing import List
-from algorithm import BaseAlgorithm
+import algorithms.algorithm as algorithm
 from datetime import datetime, timedelta
 
 
 class Simulation:
-    def __init__(self, algorithm_list: List[BaseAlgorithm]):
+    def __init__(self, algorithm_list: List[algorithm.BaseAlgorithm]):
         self.algorithms = algorithm_list
         self.start_time = datetime(2021, 11, 13)
         self.end_time = self.start_time + timedelta(days=1)
