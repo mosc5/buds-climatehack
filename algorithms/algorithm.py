@@ -42,9 +42,21 @@ class BaseAlgorithm(ABC):
         self.starting_point = starting_point
         self.customer_data = customer_data
         self.stops = stops
+        self.bus_position = []
+
+    def _get_events(self, clock_time: datetime) -> List[Event]:
+        events = []
+        for cdata in self.customer_data:
+            if cdata["signal_time"] == clock_time:
+                events.append(Event(EventType.CUSTOMER_SIGNAL, clock_time, cdata))
+        return events
+
+    def update(self, clock_time: datetime, event: Event = None) -> List[Event]:
+        current_events = self._get_events(clock_time)
+        self.update_state(clock_time, current_events)
 
     @abstractmethod
-    def update(self, clock_time: datetime, event: Event = None) -> List[Event]:
+    def update_state(self, clock_time: datetime, events: List[Event] = []) -> List[Event]:
         raise NotImplementedError()
 
     def get_customer_data(self):
