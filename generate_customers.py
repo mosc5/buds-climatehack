@@ -14,6 +14,13 @@ import json
 
 
 def generate_customers(amount: int, random_seed: int, input_file, output_file):
+    """
+        Generates a JSON-file with customer names, start times, starting locations and destinations
+        :param amount: number of customers
+        :param random_seed: random seed for reproduction
+        :param input_file: filename as string, "input.json" is pulled from data directory
+        :param output_file: filename as string, "output.json" will get saved in data directory
+    """
     random.seed(random_seed)
     customer_list = []
     loc_list = []
