@@ -24,7 +24,7 @@ class EventType(str, enum.Enum):
     # - event_data: new route, e.g. ["stop_b","stop_c"]
     CUSTOMER_SIGNAL = "CUSTOMER_SIGNAL"
     # - event_data: customers left, customers entered, customers in bus, e.g. [1, 0, 2]
-    CUSTOMER_BUS_TOP = "CUSTOMER_BUS_TOP"
+    CUSTOMER_BUS_STOP = "CUSTOMER_BUS_STOP"
 
 
 class Event:
