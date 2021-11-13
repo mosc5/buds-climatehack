@@ -1,4 +1,5 @@
 numpy==1.19.2
-matplotlib
-pandas
+matplotlib==3.4.3
+pandas==1.3.4
 jupyterlab==3.2.3
+mlrose==1.3.0
