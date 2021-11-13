@@ -1,0 +1,32 @@
+[
+  {
+    "name": "customer0",
+    "starting_time": "12:48:56",
+    "starting_point": "stop_d",
+    "destination": "stop_a"
+  },
+  {
+    "name": "customer1",
+    "starting_time": "08:32:31",
+    "starting_point": "stop_d",
+    "destination": "stop_c"
+  },
+  {
+    "name": "customer2",
+    "starting_time": "15:22:37",
+    "starting_point": "stop_b",
+    "destination": "stop_e"
+  },
+  {
+    "name": "customer3",
+    "starting_time": "04:18:08",
+    "starting_point": "stop_a",
+    "destination": "stop_e"
+  },
+  {
+    "name": "customer4",
+    "starting_time": "08:58:34",
+    "starting_point": "stop_e",
+    "destination": "stop_b"
+  }
+]
