@@ -30,6 +30,8 @@ def generate_customers(amount: int, random_seed: int, input_file, output_file):
         loc_list.append(point['name'])
     for counter in range(amount):
         time = datetime.time(hour=random.randrange(24), minute=random.randrange(60), second=random.randrange(60))
+        signal = datetime.datetime.combine(datetime.date.today(), time) \
+            - datetime.timedelta(minutes=random.randrange(1, 61))
         name = "customer" + str(counter)
         start = random.choice(loc_list)
         destination = random.choice(loc_list)
@@ -37,6 +39,7 @@ def generate_customers(amount: int, random_seed: int, input_file, output_file):
             destination = random.choice(loc_list)
         customer_dict = {
             'name': name,
+            'signal_time': str(signal.time()),
             'starting_time': str(time),
             'starting_point': start,
             'destination': destination
